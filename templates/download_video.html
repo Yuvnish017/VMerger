@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>VMerger</title>
+    <link rel="stylesheet", href="/static/output_style.css", type="text/css">
+</head>
+<body>
+    <div id="header">
+        <h1 id="heading">VMerger</h1>
+    </div>
+    <div id="download">
+        <p id="para">Video Merged Successfully!!!!</p>
+        <a href="{{ url_for('get_file', file_name=output_file_path) }}">
+            <button class="btn btn-default button1, file_output", id="download_button" title="Download">Download</button>
+        </a>
+        <a href="/", class="file_output", id="go_back_button">
+            Click Here to Go back!
+        </a>
+    </div>
+</body>
+</html>

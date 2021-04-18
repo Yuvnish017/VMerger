@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>VMerger</title>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <script>
+                var messages = {{ messages | safe }};
+                for (var i=0; i<messages.length; i++) {
+                    alert(messages[i]);
+                }
+            </script>
+        {% endif %}
+    {% endwith %}
+    <script>
+        function load(){
+            document.getElementById("upload").style.display = "none";
+            document.getElementById("loading").style.display = "block";
+        }
+    </script>
+    <script src= "https://code.jquery.com/jquery-1.12.4.min.js">
+    </script>
+    <link rel="stylesheet", href="static/input_style.css", type="text/css">
+</head>
+<body>
+    <div id="header">
+        <h1 id="heading">VMerger</h1>
+    </div>
+    <div id="loading">
+        <p id="para">Videos are getting merged. Hold tight, processed video coming any moment!</p><br>
+        <img src="/static/background_loader.gif", width="150px", height="150px", id="image">
+    </div>
+    <div id="upload">
+        <form action="/uploaded_file", method="post", enctype="multipart/form-data", name="form">
+            <label for="input", class="file_input", id="upload_button">Upload Files</label>
+            <input type="file", id="input", name="files[]", multiple="true" required>
+            <br>
+            <br>
+            <p id="filename"></p>
+            <script>
+                $(document).ready(function() {
+                    $('input[type="file"]').change(function(e) {
+                        var names = []
+                        $.each(e.target.files, function(index, value){
+                            var file = e.target.files[0].name;
+                            names.push(file);
+                        });
+                        $('#filename').text(names);
+                    });
+                });
+            </script>
+            <input type="submit", value="Merge Videos", onclick="load();", class="file_input", id="submit_button">
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,72 @@
+body{
+	height: 100%;
+	background-image: url(/static/background1.jpg);
+	background-repeat: no-repeat;	
+	background-size: 100% 172%;
+}
+
+#header{
+	background-color: blue;
+	height: 150px;
+	width: 500px;
+	margin-left: 760px;
+	margin-top: 150px;
+	border: 4px solid black;
+	border-radius: 14px;
+}
+
+#heading{
+	font-size: 100px;
+	color: white;
+	text-align: center;
+	position: absolute;
+	margin-top: 10px;
+	margin-left: 50px;
+}
+
+#download{
+	margin-left: 735px;
+	margin-top: 60px;
+	height: 50px;
+	width: 600px;
+	word-wrap: break-word;
+}
+
+#para{
+	font-size: 25px;
+	color: blue;
+	margin-left: 133px;	
+}
+
+.file_output{
+	text-decoration: none;
+	background-color: blue;
+	border: 3px solid black;
+	border-radius: 10px;
+	transition-duration: 0.4s;
+	padding: 10px 10px;
+	text-align: center;
+	color: white;
+	cursor: pointer;
+	font-size: 30px;
+	width: 300px;
+}
+
+.file_output:hover{
+	background-color: black;
+	border: 4px solid white;
+	color: blue;
+	box-shadow: 0 20px 20px 0 rgba(0,0,255,0.24), 0 17px 50px 0 rgba(0,0,255,0.19);
+}
+
+#download_button{
+	position: absolute;
+	margin-left: 135px;
+	margin-top: 0px;
+}
+
+#go_back_button{
+	position: absolute;
+	margin-top: 80px;
+	margin-left: 120px;
+}
