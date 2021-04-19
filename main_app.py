@@ -63,7 +63,7 @@ def video_merger(file_paths):
     output_file_path = os.path.join(app.config['UPLOAD_FOLDER'], str(j) + '.mp4')
     output_file_name = str(j)+'.mp4'
     j += 1
-    final_video.write_videofile(output_file_path)
+    final_video.write_videofile(output_file_path, verbose=False, logger=None)
     return output_file_name
 
 
