@@ -13,7 +13,6 @@ j = 0
 
 def allowed_files(file_names):
     filename, extension = os.path.splitext(file_names)
-    print(extension)
     if extension in allowed_extensions:
         return True
     else:
@@ -31,12 +30,10 @@ def process_files():
         os.remove(os.path.join(app.config['UPLOAD_FOLDER'], f))
 
     if request.method == 'POST':
-        print('Yes')
         if 'files[]' not in request.files:
             flash('No file selected')
             return redirect(url_for('file_upload_page'))
         files = request.files.getlist('files[]')
-        print('Received files')
         file_names = []
         b = []
         for file in files:
@@ -49,7 +46,6 @@ def process_files():
             file_names.append(os.path.join(app.config['UPLOAD_FOLDER'], filename))
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
 
-        print(all(x == 1 for x in b))
         if not all(x == 1 for x in b):
             flash('File extension not supported')
             return redirect(url_for('file_upload_page'))
