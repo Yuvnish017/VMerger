@@ -7,7 +7,6 @@ app = Flask(__name__)
 app.secret_key = os.urandom(24)
 upload_folder = r'uploads'
 app.config['UPLOAD_FOLDER'] = upload_folder
-# app.config['MAX_CONTENT_LENGTH'] = 100*1024*1024
 allowed_extensions = ['.mp4', '.mkv', '.avi']
 j = 0
 
@@ -83,4 +82,4 @@ def get_file(file_name):
 
 
 if __name__ == '__main__':
-    app.run(port='5004', debug=True)
+    app.run(host='0.0.0.0')
