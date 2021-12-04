@@ -17,6 +17,6 @@ A Python Flask framework based Web Application for merging video files
 * static folder - contains background image and the CSS files.
 * requirements.txt - contains list of libraries required with versions
 #### Note
-* In line 81 keep debug=True instead of host='0.0.0.0' in app.run() if you are using the application in development environment or making changes to the app and want to see changes in browser immediately without running the code again and again.
+* In line 81 of 'main_app.py', keep debug=True instead of host='0.0.0.0' in app.run() if you are using the application in development environment or making changes to the app and want to see changes in browser immediately without running the code again and again.
 * Don't forget to turn off debugging mode by debug=False when deploying the application and add host='0.0.0.0' in app.run() again.
 * Create an empty folder by the name 'uploads' before running the python file. This folder will be storing the uploaded files.
